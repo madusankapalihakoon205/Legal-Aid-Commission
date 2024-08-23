@@ -7,9 +7,9 @@ import {
   updateNote,
 } from "./branch.controllers.js";
 
-const router = express.Router();
+const branchRouter = express.Router();
 
-router.route("/").get(getAllNotes).post(createNote);
-router.route("/:id").get(getSingleNote).patch(updateNote).delete(deleteNote);
+branchRouter.route("/").get(getAllNotes).post(createNote);
+branchRouter.route("/:id").get(getSingleNote).patch(updateNote).delete(deleteNote);
 
-export default router;
+export default branchRouter;

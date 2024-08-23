@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import notesRoute from "./src/resources/branches/branch.routes.js";
 import cors from "cors";
+import authRouter from "./src/routes/authRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(express.json());
 
 // api routes
 app.use("/api/branches", notesRoute);
+app.use('/api/auth', authRouter);
 
 
 app.listen(port, () => {
